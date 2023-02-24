@@ -67,3 +67,29 @@ Write command $ make to build module
 $ sudo insmod mymodule.ko
 
 $ sudo insmod mymodule.ko #this will display our commands that was inside mymodule
+
+So there is also another way of the module
+
+#invlude<linux/module.h>
+#include<linux/kernel.h>
+#invlude<linux/kthread.h>
+#include<linux/sched.h>
+#invlude<linux/time.h>
+
+int  init_module(void)
+{
+
+int p;
+int q = 5;
+int r = 3;
+p = q+r
+
+printk(KERN_INFO " The sum of the numbers is %d\n", p);
+
+return 0;
+}
+void cleanuo\p_module(void){
+printk(KERN_INFO"BYE\n");
+}
+
+We need to do same things but just we need rewrite the mymodule and add few things.
